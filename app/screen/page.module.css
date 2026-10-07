@@ -1,0 +1,162 @@
+.page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+
+.head {
+  margin-bottom: 22px;
+  animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin-top: 5px;
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 76px;
+  min-width: 0;
+}
+
+.credit {
+  font-size: 11.5px;
+  color: var(--faint);
+}
+
+.results {
+  min-width: 0;
+}
+
+.meta {
+  font-size: 11.5px;
+  color: var(--faint);
+  margin-bottom: 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.table th {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--faint);
+  font-weight: 500;
+  position: sticky;
+  top: 53px;
+  background: var(--bg);
+  z-index: 2;
+}
+
+.table tbody tr {
+  animation: rowIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background: var(--surface);
+}
+
+@keyframes rowIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.r {
+  text-align: right;
+}
+
+.sym {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.name {
+  white-space: normal;
+  max-width: 250px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.empty {
+  border: 1px dashed var(--border-strong);
+  border-radius: 14px;
+  padding: 40px 24px;
+  font-size: 13.5px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.error {
+  border: 1px solid var(--down);
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 13px;
+  color: var(--down);
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .side {
+    position: static;
+  }
+  .results {
+    overflow-x: auto;
+  }
+  .table th {
+    position: static;
+  }
+}

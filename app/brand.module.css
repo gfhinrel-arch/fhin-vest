@@ -1,0 +1,29 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.mark {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #0f0f10;
+  flex: none;
+}
+
+.text {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.vest {
+  margin-left: 3px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}

@@ -1,0 +1,141 @@
+:root {
+  --paper: #f9fafb;
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --surface-2: #f4f4f5;
+  --fg: #0f0f10;
+  --muted: #52525b;
+  --faint: #a1a1aa;
+  --border: #e4e4e7;
+  --border-strong: #d4d4d8;
+  --accent: #2563eb;
+  --accent-ink: #1d4ed8;
+  --accent-soft: #eff4ff;
+  --up: #15803d;
+  --up-soft: #e7f5ec;
+  --down: #b42318;
+  --down-soft: #fdece9;
+  --amber: #b45309;
+  --amber-soft: #fdf3e3;
+  --radius-card: 28px;
+  --radius-sm: 12px;
+  --shadow-diffuse: 0 20px 40px -15px rgb(0 0 0 / 0.06);
+  --shadow-lift: 0 12px 28px -12px rgb(15 15 16 / 0.14);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100dvh;
+  color: var(--fg);
+  background: var(--paper);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--fg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--faint);
+}
+
+/* Fixed film grain. pointer-events-none + fixed so it never repaints on scroll. */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Skeleton shimmer. */
+.shimmer {
+  background: linear-gradient(100deg, #f4f4f5 20%, #e4e4e7 40%, #f4f4f5 60%);
+  background-size: 220% 100%;
+  animation: shimmer 1.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 180% 0;
+  }
+  to {
+    background-position: -40% 0;
+  }
+}
+
+.breathe {
+  animation: breathe 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.78);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

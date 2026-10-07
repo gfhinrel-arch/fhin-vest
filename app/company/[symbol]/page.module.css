@@ -1,0 +1,200 @@
+.page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+
+.crumb {
+  font-size: 12px;
+  color: var(--faint);
+  margin-bottom: 14px;
+  animation: rise 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.crumbLink {
+  color: var(--accent);
+}
+
+.crumbLink:hover {
+  text-decoration: underline;
+}
+
+.header {
+  margin-bottom: 22px;
+  animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.04s both;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.code {
+  margin-top: 5px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--surface);
+  margin-bottom: 30px;
+  animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+
+.card {
+  padding: 16px 18px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.25s ease;
+}
+
+.card:hover {
+  background: var(--surface-2);
+}
+
+.card:nth-child(3n) {
+  border-right: none;
+}
+
+.card:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+.cardLabel {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--faint);
+}
+
+.cardValue {
+  margin-top: 7px;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cardMeta {
+  margin-top: 3px;
+  font-size: 11px;
+  color: var(--faint);
+}
+
+.cardBar {
+  margin-top: 8px;
+}
+
+.section {
+  margin-bottom: 30px;
+  animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--faint);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.table th {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--faint);
+  font-weight: 500;
+}
+
+.table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background: var(--surface);
+}
+
+.r {
+  text-align: right;
+}
+
+.prose {
+  white-space: pre-wrap;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--fg);
+  max-width: 65ch;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--faint);
+}
+
+.empty {
+  border: 1px dashed var(--border-strong);
+  border-radius: 12px;
+  padding: 24px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  font-size: 12px;
+  color: var(--faint);
+}
+
+@media (max-width: 860px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    border-right: none;
+  }
+  .card:nth-last-child(-n + 3) {
+    border-bottom: 1px solid var(--border);
+  }
+  .card:last-child {
+    border-bottom: none;
+  }
+  .section {
+    overflow-x: auto;
+  }
+  .title {
+    font-size: 20px;
+  }
+}

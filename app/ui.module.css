@@ -1,0 +1,142 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  background: var(--surface);
+}
+
+.chip[data-tone="accent"] {
+  color: var(--accent);
+  border-color: var(--accent-soft);
+  background: var(--accent-soft);
+}
+
+.chip[data-tone="up"] {
+  color: var(--up);
+  border-color: var(--up-soft);
+  background: var(--up-soft);
+}
+
+.chip[data-tone="down"] {
+  color: var(--down);
+  border-color: var(--down-soft);
+  background: var(--down-soft);
+}
+
+.chip[data-tone="amber"] {
+  color: var(--amber);
+  border-color: rgba(245, 158, 11, 0.25);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.chipDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+.meterWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  justify-content: flex-end;
+}
+
+.meterTrack {
+  width: 76px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  overflow: hidden;
+  flex: none;
+}
+
+.meterFill {
+  display: block;
+  height: 100%;
+  transform-origin: left center;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.meterFill[data-tone="up"] {
+  background: var(--up);
+}
+
+.meterFill[data-tone="down"] {
+  background: var(--down);
+}
+
+.meterValue {
+  min-width: 46px;
+  text-align: right;
+  font-size: 12.5px;
+}
+
+.meterNa {
+  color: var(--faint);
+  font-size: 12.5px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 40px 24px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.emptyIcon {
+  color: var(--faint);
+}
+
+.emptyTitle {
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.emptyBody {
+  max-width: 56ch;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.inlineError {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 10px 13px;
+  border: 1px solid var(--down-soft);
+  border-radius: var(--radius-sm);
+  background: var(--down-soft);
+}
+
+.errorDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--down);
+  flex: none;
+  margin-top: 5px;
+}
+
+.errorText {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--down);
+}
